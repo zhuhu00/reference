@@ -28,11 +28,17 @@ class(iris)
 # 查找对象所属的类
 ```
 
-### 使用库
+### 下载和使用库
 
 ```r
 install.packages('dplyr')
 # 从 CRAN 下载并安装软件包
+install.packages(“BiocManager”)
+library(BiocManager)
+BiocManager::install("dplyr")
+# 使用Bioconductor的BiocManager包下载并安装软件包
+devtools::install_github("clusterProfiler")
+# 直接从github中下载并安装软件包
 library(dplyr)
 # 将包加载到会话中，使所有其功能可供使用
 dplyr::select
@@ -43,11 +49,16 @@ data(iris)
 
 ### 工作目录
 
+查找当前工作目录（其中找到输入并发送输出）
+
 ```r
 getwd()
-# 查找当前工作目录（其中找到输入并发送输出）
+```
+
+更改当前工作目录
+
+```r
 setwd(‘C://file/path’)
-# 更改当前工作目录
 ```
 
 使用 RStudio 中的项目来设置工作目录到您正在使用的文件夹
@@ -274,6 +285,7 @@ plot(x, y, type = "l", main = "Line Plot", xlab = "X-axis", ylab = "Y-axis")
 另见
 ---
 
+- [全面了解Base R](https://blanket58.github.io/books/study-notes-of-R/) _(github.io)_
 - [R 语言官网](https://www.r-project.org/) _(r-project.org)_
 - [数据科学 R](https://r4ds.hadley.nz/) _(hadley.nz)_
 - [使用 R 进行整洁的建模](https://www.tmwr.org/) _(tmwr.org)_
